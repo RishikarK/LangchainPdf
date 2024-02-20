@@ -12,7 +12,7 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
 load_dotenv()
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "your-key-here"
 
 
 def get_pdf_text(pdf_docs):

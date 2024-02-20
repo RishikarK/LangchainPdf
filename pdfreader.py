@@ -8,7 +8,7 @@ from langchain.vectorstores import FAISS
 import os
 
 # Set OpenAI API Key
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "Your key here"
 
 # PDF Processing
 st.title("PDF Question Answering")

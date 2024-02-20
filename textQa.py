@@ -9,7 +9,7 @@ import os
 import time
 
 # Set OpenAI API Key
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "Your key here"
 
 # Text Processing
 st.title("Text Question Answering")

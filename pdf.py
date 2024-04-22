@@ -1,6 +1,5 @@
 import os
 import streamlit as st
-from dotenv import load_dotenv
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
@@ -131,8 +130,7 @@ def analyze_chat_history(chat_data):
 
 # Main Streamlit function
 def main():
-
-    load_dotenv()
+    
     st.set_page_config(page_title="Chat PDFs 📚")
 
     # Inject CSS styles into the Streamlit app
@@ -294,7 +292,8 @@ def get_vectorstore(text_chunks):
 
 # Define a function to create a conversation chain
 def get_conversation_chain(vectorstore):
-    llm = ChatOpenAI(model="gpt-3.5-turbo-1106")
+    openai_api_key = os.environ.get('OPENAI_API_KEY')
+    llm = ChatOpenAI(model="gpt-3.5-turbo-1106",openai_api_key=openai_api_key)
     # llm = ChatGoogleGenerativeAI(model="gemini-pro",
     #                          temperature=0.3,convert_system_message_to_human=True)
     memory = ConversationBufferMemory(
